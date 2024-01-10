@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <title>JavaScript DOM</title>
+   </head>
+   <body>
+       <!-- DOM Demo-->
+
+       <!-- Change Text-->
+       <h1 id="heading">Hello World</h1>
+       <button id="btn2">Click Me</button>
+       <script>
+           buttonElement = document.getElementByID("btn2");
+           buttonElement.addEventListener("click" , function () {
+               headingElement = document.getElementById("heading");
+               headingElement.innerHTML = "Hello JavaScript";
+           })
+       </script>
+       <hr />
+
+       <!-- Change URL-->
+       <input type="text" name="url" id="url" placeholder="Enter Url" />
+       <button id="btn">Click Me</button>
+       <script>
+           buttonElement = document.getElementById("btn");
+           buttonElement.addEventListener("click" , function () {
+               urlElement = document.getElementById("url");
+               console.log(urlElement.value);
+               window.location = urlElement.value;
+           });
+       </script>
+       <hr />
+
+       <!--Change Image-->
+       <img
+         id="image"
+         src="https://media.istockphoto.com/id/1179375515/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B9%80%E0%B8%A7%E0%B8%81%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B9%81%E0%B8%9A%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%A2%E0%B9%84%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B7%E0%B8%AD-%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B9%8D%E0%B8%B2%E0%B9%81%E0%B8%A2%E0%B8%81%E0%B8%9A%E0%B8%99%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5.jpg?s=170667a&w=0&k=20&c=uCG-M-0MN_MFfX9Jfe3JB_wU1c_9V6zRCOXHwRpx-hg="
+         alt="Image"
+       />
+       <button id="btn3">Click Me</button>
+       <script>
+           buttonElement = document.getElementById("btn3");
+           buttonElement.addEventListener("click" , function () {
+               imageElement = document.getElementById("image");
+               imageElement.src =
+                 "https://media.istockphoto.com/id/1225848178/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B9%84%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B7%E0%B8%AD-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%95%E0%B8%81%E0%B8%A5%E0%B8%87-%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B5%E0%B8%9F%E0%B9%89%E0%B8%B2.jpg?s=612x612&w=0&k=20&c=-wv41oq0oOOXcNKPdGGHElYltENHopYLN4csAxL1NvE=";
+           });
+       </script>
+       <hr />
+
+       <!--Change CSS-->
+       <h1 id="heading2">Hello World</h1>
+       <button id="btn4">Click Me</button>
+       <script>
+           buttonElement = document.getElementById("btn4");
+           buttonElement.addEventListener("click" , function () {
+               headingElement = document.getElementById("heading2");
+               headingElement.style.color ="red";
+               headingElement.style.backgroundColor = "black";
+               headingElement.style.fontSize ="50px"
+           })
+       </script>
+       <hr />
+
+       <!--Change Class-->
+       <style>
+       .heading {
+           color: rgb(47, 0, 255);
+           background-color: rgb(196, 199, 23);
+           font-size: 50px;
+       }
+       </style>
+       <h1 id="heading3">Hello World</h1>
+       <button id="btn5">Click Me</button>
+       <script>
+           buttonElement = document.getElementById("btn5");
+           buttonElement.addEventListener("click" , function() {
+               headingElement = document,getElementByID("heading3");
+               headingElement.className = "heading";
+           });
+       </script>
+       <hr />
+
+       <!--Change innerHTML-->
+       <h1 id="heading4">Hello World</h1>
+       <button id="btn6">Click Me</button>
+       <script>
+           buttonElement = document.getElementById("btn6");
+           buttonElement.addEventListener("click" , function () {
+               headingElement = document.getElementById("heading4");
+               if (headingElement.innerHTML == "Hello World") {
+                   headingElement.innerHTML = "Hello JavaScript";
+               } else {
+                   headingElement.innerHTML = "Hello World";
+               }
+           })
+       </script>
+       <hr />
+   </body>
+</html>

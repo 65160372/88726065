@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FFC0D9;
+    color: #FF69B4;
+    padding: 20px;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    color: #DB7093;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    color: #FBA1B7;
+}
+
+.flex-justify-center {
+    display: flex;
+    justify-content: center;
+    color: #9370DB;
+}
+
+.flex-aling-center {
+    display: flex;
+    align-items: center;
+    color: #8A2BE2;
+}
+
+.flex-item {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    margin: 10px;
+}
