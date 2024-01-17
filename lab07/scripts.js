@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     todoList.appendChild(listItem);
     }
     }
-    // การกดปุ่ ม "เพิ่ม"
+    /// การกดปุ่ ม "เพิ่ม"
     addButton.addEventListener("click", addTodo);
     // การกด Enter ใน input
     todoInput.addEventListener("keypress", function (event) {
