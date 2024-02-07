@@ -1,0 +1,28 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "name": "For",
+        "price": "390",
+        "author1": "jJameju",
+        "author2": "timmak",
+        "author3": "Bobso"
+      },
+      {
+        "id":2,
+        "name": "เพียงเธอผู้นั้น",
+        "price": "300",
+        "author1": "ยามาโต มิซากิ",
+        "author2": "คามาเบะ ซุย",
+        "author3": "โคอิชิ"
+      },
+      {
+        "id": 3,
+        "name": "Weathering With You ฤดูฝัน ฉันมีเธอ",
+        "price": "295",
+        "author1": "มาโคโตะ ชินไค",
+        "author2": "มาซาโยชิ ทานากะ",
+        "author3": "อาซึชิ ทามุระ"
+      }
+    ]
+  }
