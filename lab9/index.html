@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cat Gallery</title>
+</head>
+<body>
+  <h1>My Cat Gallery</h1>
+
+  <!-- Button to navigate to uploadcat.html -->
+  <a href="uploadcat.html"><button>Upload Cat</button></a>
+
+  <!-- Display uploaded cats -->
+  <div id="uploadedCats"></div>
+
+  <!-- Script for displaying uploaded cats -->
+  <script>
+    const API_URL = "https://api.thecatapi.com/v1/";
+    const API_KEY = "live_o1PYzbgcueNJD8aF4WawRuNp0tXSrEWCOsJcRxnww6AKr2scr76d6jYZaanX2eiR";
+
+    function displayUploadedCats() {
+      fetch(`${API_URL}images/?limit=10&page=0&order=DESC`, {
+        method: "GET",
+        headers: {
+          "x-api-key": API_KEY,
+        },
+      })
+        .then(response => response.json())
+        .then(data => {
+          const uploadedCats = document.getElementById("uploadedCats");
+          if (data.length === 0) {
+            uploadedCats.innerHTML = "No uploaded cats found.";
+          } else {
+            data.forEach(cat => {
+              const catDiv = document.createElement("div");
+              catDiv.innerHTML = `
+                <div style="position: relative;">
+                  <img src="${cat.url}" width="22%" title="${cat.id}"/>
+                  <button onclick="deleteCat('${cat.id}')"><img src="images/delete-24.png"></button>
+                </div>`;
+              uploadedCats.appendChild(catDiv);
+            });
+          }
+        })
+        .catch(error => console.error("Error fetching cats:", error));
+    }
+
+    // Function to delete a cat
+    function deleteCat(pid) {
+    fetch(`${API_URL}images/${pid}`, {
+      method: "DELETE",
+      headers: {
+        "x-api-key": API_KEY,
+      },
+    })
+      .then((response) => {
+        return response.json(); 
+      })
+      .then((data) => {
+        console.log(data);
+        alert("Image deleted successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+    // Call the function to display uploaded cats when the page loads
+    displayUploadedCats();
+  </script>
+</body>
+</html>

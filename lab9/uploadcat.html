@@ -1,0 +1,40 @@
+<!-- uploadcat.html -->
+<h3>Upload a cat</h3>
+<input type="file" id="fileInput" />
+<button onclick="uploadImage()">Upload</button>
+<div id="uploadResults"></div>
+<script>
+  const API_URL = "https://api.thecatapi.com/v1/";
+  const API_KEY =
+    "live_o1PYzbgcueNJD8aF4WawRuNp0tXSrEWCOsJcRxnww6AKr2scr76d6jYZaanX2eiR";
+
+  function uploadImage() {
+    const fileInput = document.getElementById("fileInput");
+    const file = fileInput.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+
+    fetch(`${API_URL}images/upload`, {
+      method: "POST",
+      headers: {
+        "x-api-key": API_KEY,
+      },
+      body: formData,
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        document.getElementById(
+          "uploadResults"
+        ).innerHTML = `<img src="${data.url}" width="50%" /><br>Image uploaded successfully`;
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 2000); // Redirect to index.html after 2 seconds
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+</script>
